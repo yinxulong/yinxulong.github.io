@@ -1,0 +1,47 @@
+<!DOCTYPE html > 
+<html > 
+<script type="text/javascript"> 
+function clock_12h() 
+{     var today = new Date(); 
+    var year = today.getFullYear(); 
+    var month = today.getMonth()+1; 
+    var date = today.getDate(); 
+    var hour = today.getHours();  
+    var apm="上午";  
+    if (hour>12)  
+    {     hour=hour-12; 
+        apm="下午" ; 
+    } 
+    var minute = today.getMinutes(); 
+    var second = today.getSeconds(); 
+ 
+    document.getElementById("myclock").innerHTML= 
+    year+"/"+month+"/"+date+"&nbsp;"+apm+""+hour+":"+minute+":"+second 
+    +"&nbsp;</h2>"; 
+} 
+var myTime = setInterval("clock_12h()",1000); 
+</script> 
+<style> 
+.footer{ 
+/*height: 100px; 
+width: 100%; 
+position: fixed;*/ 
+bottom: 0; 
+color:#A52A2A; 
+} 
+
+div{
+    font-weight:bold;
+    font-size:3em;
+}
+
+</style> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<title>走读电子出入证</title> 
+</head> 
+<body> 
+    <img src="QQ图片20211119235933.jpg" width="100%" height="100%"/> 
+    <div class="footer" align="center"  id="myclock"></div> 
+</body> 
+</html> 
